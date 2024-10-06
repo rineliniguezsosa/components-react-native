@@ -14,7 +14,7 @@ interface Props {
 export const Title = ({text,safe = false,white = false}:Props) => {
     const { top } = useSafeAreaInsets();
   return (
-      <Text 
+      <Text
         style={{
             ...globalStyles.title,
             marginTop:safe ? top : 0,
