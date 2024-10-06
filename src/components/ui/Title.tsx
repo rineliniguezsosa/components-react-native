@@ -1,10 +1,16 @@
 import React from 'react';
 import { View,Text } from 'react-native';
 
-export const Title = () => {
+interface Props {
+    text:string,
+    safe?:boolean,
+    white?:boolean
+}
+
+export const Title = ({text,safe,white}:Props) => {
   return (
     <View>
-      <Text>Title</Text>
+      <Text>{text}</Text>
     </View>
   );
 };
