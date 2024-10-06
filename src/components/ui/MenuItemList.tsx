@@ -1,6 +1,8 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { View,Text,Pressable,StyleSheet } from 'react-native';
 import { colors } from '../../styles/colors';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 interface Props {
     name:string,
@@ -12,7 +14,7 @@ export const MenuItemList = ({name,icon,component}:Props) => {
   return (
     <Pressable onPress={()=> console.log('items')}>
       <View style={{...styles.constainer,backgroundColor:colors.background}}>
-        MenuItemList
+        <Icon name={icon} size={25} style={{marginRight:10,color:colors.primary}}/>
       </View>
     </Pressable>
   );
