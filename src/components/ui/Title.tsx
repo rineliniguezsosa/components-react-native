@@ -1,5 +1,9 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { View,Text } from 'react-native';
+import { Text } from 'react-native';
+import { globalStyles } from '../../styles/theme';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { colors } from '../../styles/colors';
 
 interface Props {
     text:string,
@@ -7,10 +11,18 @@ interface Props {
     white?:boolean
 }
 
-export const Title = ({text,safe,white}:Props) => {
+export const Title = ({text,safe = false,white = false}:Props) => {
+    const { top } = useSafeAreaInsets();
   return (
-    <View>
-      <Text>{text}</Text>
-    </View>
+      <Text 
+        style={{
+            ...globalStyles.title,
+            marginTop:safe ? top : 0,
+            marginBottom:10,
+            color:white ? 'white' : colors.text,
+        }}
+       >
+        {text}
+      </Text>
   );
 };
