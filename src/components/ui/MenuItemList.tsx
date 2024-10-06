@@ -15,6 +15,7 @@ export const MenuItemList = ({name,icon,component}:Props) => {
     <Pressable onPress={()=> console.log('items')}>
       <View style={{...styles.constainer,backgroundColor:colors.background}}>
         <Icon name={icon} size={25} style={{marginRight:10,color:colors.primary}}/>
+        <Text style={{color:colors.text}}>{name}</Text>
       </View>
     </Pressable>
   );
