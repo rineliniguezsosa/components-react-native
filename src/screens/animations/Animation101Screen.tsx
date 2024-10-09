@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useRef } from 'react';
 import { View,Text,StyleSheet,Pressable, Animated } from 'react-native';
 import { colors } from '../../styles/colors';
@@ -29,8 +30,8 @@ export const Animation101Screen = () => {
         style={[styles.purpleBox,{opacity:fadeAnim}]}
       />
 
-      <Pressable onPress={fadeIn}><Text>Fedin</Text></Pressable>
-      <Pressable onPress={fadeOut}><Text>FedOut</Text></Pressable>
+      <Pressable style={{marginTop:50}} onPress={fadeIn}><Text>Fedin</Text></Pressable>
+      <Pressable style={{marginTop:50}} onPress={fadeOut}><Text>FedOut</Text></Pressable>
     </View>
   );
 };
