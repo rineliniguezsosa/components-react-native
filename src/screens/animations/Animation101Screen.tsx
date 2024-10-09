@@ -3,16 +3,25 @@ import { View,Text,StyleSheet,Pressable, Animated } from 'react-native';
 import { colors } from '../../styles/colors';
 
 export const Animation101Screen = () => {
-  const fadeAnim = useRef(new Animated.Value(0.4)).current;
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  const fadeIn = () =>{
+    Animated.timing(fadeAnim,{
+      toValue:1,
+      duration:300,
+      useNativeDriver:true,
+    }).start(()=> console.log('yes'));
+  };
+
   return (
     <View style={styles.constainer}>
       <Text>Animation101Screen</Text>
 
-      <View
-        style={styles.purpleBox}
+      <Animated.View
+        style={[styles.purpleBox,{opacity:fadeAnim}]}
       />
 
-      <Pressable><Text>Fedin</Text></Pressable>
+      <Pressable onPress={fadeIn}><Text>Fedin</Text></Pressable>
       <Pressable><Text>FedOut</Text></Pressable>
     </View>
   );
