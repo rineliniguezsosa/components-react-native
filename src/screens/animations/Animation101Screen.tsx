@@ -6,6 +6,10 @@ export const Animation101Screen = () => {
   return (
     <View style={styles.constainer}>
       <Text>Animation101Screen</Text>
+
+      <View
+        style={styles.purpleBox}
+      />
     </View>
   );
 };
