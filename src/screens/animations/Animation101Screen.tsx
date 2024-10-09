@@ -1,8 +1,9 @@
-import React from 'react';
-import { View,Text,StyleSheet,Pressable } from 'react-native';
+import React, { useRef } from 'react';
+import { View,Text,StyleSheet,Pressable, Animated } from 'react-native';
 import { colors } from '../../styles/colors';
 
 export const Animation101Screen = () => {
+  const fadeAnim = useRef(new Animated.Value(0.4)).current;
   return (
     <View style={styles.constainer}>
       <Text>Animation101Screen</Text>
