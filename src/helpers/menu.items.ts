@@ -7,6 +7,11 @@ export const menuItems = [
     },
     {
       name: 'Animation 102',
+      icon: 'push-outline',
+      component: 'Animation102BounceScreen',
+    },
+    {
+      name: 'Animation 102',
       icon: 'albums-outline',
       component: 'Animation102Screen',
     },
