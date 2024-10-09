@@ -10,6 +10,9 @@ export const Animation101Screen = () => {
       <View
         style={styles.purpleBox}
       />
+
+      <Pressable><Text>Fedin</Text></Pressable>
+      <Pressable><Text>FedOut</Text></Pressable>
     </View>
   );
 };
