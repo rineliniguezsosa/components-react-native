@@ -13,6 +13,14 @@ export const Animation101Screen = () => {
     }).start(()=> console.log('yes'));
   };
 
+  const fadeOut = () =>{
+    Animated.timing(fadeAnim,{
+      toValue:0,
+      duration:300,
+      useNativeDriver:true,
+    }).start(()=> console.log('yes'));
+  };
+
   return (
     <View style={styles.constainer}>
       <Text>Animation101Screen</Text>
@@ -22,7 +30,7 @@ export const Animation101Screen = () => {
       />
 
       <Pressable onPress={fadeIn}><Text>Fedin</Text></Pressable>
-      <Pressable><Text>FedOut</Text></Pressable>
+      <Pressable onPress={fadeOut}><Text>FedOut</Text></Pressable>
     </View>
   );
 };
