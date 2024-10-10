@@ -1,10 +1,15 @@
 import React from 'react';
-import { View,Text } from 'react-native';
+import { View,StyleProp, ViewStyle } from 'react-native';
+import { globalStyles } from '../../styles/theme';
 
-export const CustomView = () => {
+interface Props {
+    style?:StyleProp<ViewStyle>,
+    children?:React.ReactNode,
+}
+export const CustomView = ({style,children}:Props) => {
   return (
-    <View>
-      <Text>CustomView</Text>
+    <View style={[globalStyles.mainContainer,style]}>
+      {children}
     </View>
   );
 };
