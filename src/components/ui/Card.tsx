@@ -1,10 +1,16 @@
-import React from 'react';
-import { View,Text } from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import React, { PropsWithChildren } from 'react';
+import { View, StyleProp, ViewStyle } from 'react-native';
+import { colors } from '../../styles/colors';
 
-export const Card = () => {
+interface Props extends PropsWithChildren {
+    style?:StyleProp<ViewStyle>
+}
+
+export const Card = ({style,children}:Props) => {
   return (
-    <View>
-      <Text>Card</Text>
+    <View style={[{backgroundColor:colors.cardBackground,borderRadius:10,padding:10},style]}>
+      {children}
     </View>
   );
 };
