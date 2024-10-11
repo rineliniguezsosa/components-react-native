@@ -1,10 +1,29 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
-import { View,Text } from 'react-native';
+import { Text,Pressable,StyleProp,ViewStyle } from 'react-native';
+import { colors } from '../../styles/colors';
+import { globalStyles } from '../../styles/theme';
 
-export const Button = () => {
+interface Props {
+    text:string,
+    style?:StyleProp<ViewStyle>,
+    onPress:() => void
+}
+
+export const Button = ({text,style,onPress}:Props) => {
   return (
-    <View>
-      <Text>Button</Text>
-    </View>
+    <Pressable
+        onPress={onPress}
+        style={({pressed})=>([
+            globalStyles.btnPrimary,
+            {
+                opacity:pressed ? 0.8 : 1,
+                backgroundColor:colors.primary,
+
+            },
+        ])}
+    >
+      <Text style={[globalStyles.btnPrimaryText,{color:colors.buttonTextColor}]}>{text}</Text>
+    </Pressable>
   );
 };
