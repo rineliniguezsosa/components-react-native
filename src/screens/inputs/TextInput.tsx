@@ -1,7 +1,7 @@
 import React from 'react';
 import { View,Text } from 'react-native';
 
-export const TextInput = () => {
+export const TextInputScreen = () => {
   return (
     <View>
       <Text>TextInput</Text>
