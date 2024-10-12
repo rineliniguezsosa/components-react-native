@@ -13,8 +13,6 @@ interface Props {
 
 export const MenuItemList = ({name,icon,component}:Props) => {
   const navigation = useNavigation<any>();
-    console.log(component);
-
   return (
     <>
     <Pressable onPress={()=> navigation.navigate(component)}>
