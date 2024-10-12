@@ -37,13 +37,24 @@ export const AlertScreen = () => {
             },
         });
 
+        const showPrompt = () =>{
+            Alert.prompt(
+                'Hi, what is your email ',
+                'lorem',
+                (valor:string)=> console.log('the value:',valor),
+                'secure-text',
+                'soy un valor por defecto',
+                'number-pad'
+            );
+        };
+
   return (
     <CustomView style={globalStyles.globalMargin}>
         <Title safe text="Alertas"/>
 
         <Button style={{marginBottom:5}} onPress={createTwoButtonAlert} text="Alert two buttons"/>
         <Button style={{marginBottom:5}} onPress={createThreeButtonAlert} text="Alerta three buttons"/>
-        <Button style={{marginBottom:5}} onPress={()=>{}} text="Alert Prompt"/>
+        <Button style={{marginBottom:5}} onPress={showPrompt} text="Alert Prompt"/>
     </CustomView>
   );
 };
