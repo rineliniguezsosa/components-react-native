@@ -25,7 +25,9 @@ export const TextInputScreen = () => {
         />
       </Card>
 
-      <Text>{JSON.stringify(form,null,2)}</Text>
+      <Card>
+        <Text>{JSON.stringify(form,null,2)}</Text>
+      </Card>
     </CustomView>
   );
 };
