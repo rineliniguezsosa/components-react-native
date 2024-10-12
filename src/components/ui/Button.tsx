@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { Text,Pressable,StyleProp,ViewStyle } from 'react-native';
 import { colors } from '../../styles/colors';
@@ -21,6 +20,7 @@ export const Button = ({text,style,onPress}:Props) => {
                 backgroundColor:colors.primary,
 
             },
+            style,
         ])}
     >
       <Text style={[globalStyles.btnPrimaryText,{color:colors.buttonTextColor}]}>{text}</Text>
