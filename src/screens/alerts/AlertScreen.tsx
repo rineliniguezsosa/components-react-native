@@ -6,6 +6,7 @@ import { Title } from '../../components/ui/Title';
 import { globalStyles } from '../../styles/theme';
 import { Button } from '../../components/ui/Button';
 import { Alert } from 'react-native';
+import prompt from 'react-native-prompt-android';
 
 export const AlertScreen = () => {
     const createTwoButtonAlert = () =>
@@ -37,14 +38,30 @@ export const AlertScreen = () => {
             },
         });
 
+        // const showPrompt = () =>{
+        //     Alert.prompt(
+        //         'Hi, what is your email ',
+        //         'lorem',
+        //         (valor:string)=> console.log('the value:',valor),
+        //         'secure-text',
+        //         'soy un valor por defecto',
+        //         'number-pad'
+        //     );
+        // };
         const showPrompt = () =>{
-            Alert.prompt(
-                'Hi, what is your email ',
-                'lorem',
-                (valor:string)=> console.log('the value:',valor),
-                'secure-text',
-                'soy un valor por defecto',
-                'number-pad'
+            prompt(
+                'Enter password',
+                'Enter your password to claim your $1.5B in lottery winnings',
+                [
+                 {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                 {text: 'OK', onPress: password => console.log('OK Pressed, password: ' + password)},
+                ],
+                {
+                    type: 'secure-text',
+                    cancelable: false,
+                    defaultValue: 'test',
+                    placeholder: 'placeholder',
+                }
             );
         };
 
