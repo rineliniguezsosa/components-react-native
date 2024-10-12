@@ -9,8 +9,9 @@ export const PullToRefreshScreen = () => {
   const { top } = useSafeAreaInsets();
 
   const onRefresh = () => {
+    setRefresh(true);
     setTimeout(()=>{
-      setRefresh(true);
+      setRefresh(false);
     },2000);
   };
   return (
