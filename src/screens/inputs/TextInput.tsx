@@ -3,7 +3,7 @@ import { CustomView } from '../../components/ui/CustomView';
 import { Title } from '../../components/ui/Title';
 import { globalStyles } from '../../styles/theme';
 import { Card } from '../../components/ui/Card';
-import { TextInput } from 'react-native';
+import { Text, TextInput } from 'react-native';
 import { useForm } from '../../hooks/useForm';
 
 export const TextInputScreen = () => {
@@ -24,6 +24,8 @@ export const TextInputScreen = () => {
         onChangeText={(text) => handleChange('nombre',text)}
         />
       </Card>
+
+      <Text>{JSON.stringify(form,null,2)}</Text>
     </CustomView>
   );
 };
