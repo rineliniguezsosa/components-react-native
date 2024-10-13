@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react';
-import { Text,FlatList } from 'react-native';
+import { ActivityIndicator, FlatList, Image, View } from 'react-native';
 import { CustomView } from '../../components/ui/CustomView';
-import { Title } from '../../components/ui/Title';
-import { colors } from '../../styles/colors';
+// import { Title } from '../../components/ui/Title';
+// import { colors } from '../../styles/colors';
 
 export const InfiniteScrollScreen = () => {
     const [numbers, setNumbers] = useState([0,1,2,3,4,5,6]);
@@ -16,7 +17,7 @@ export const InfiniteScrollScreen = () => {
     };
   return (
     <CustomView>
-      <Title safe text="InfiniteScrollScreen"/>
+      {/* <Title safe text="InfiniteScrollScreen"/> */}
 
       <FlatList
         data={numbers}
@@ -24,12 +25,18 @@ export const InfiniteScrollScreen = () => {
         onEndReachedThreshold={0.6}
         keyExtractor={(item) => item.toString()}
         renderItem={({item})=>(
-            <Text  style={{
-                height:300,
-                backgroundColor:colors.primary,
-                fontSize:50,
-                color:'white',
-            }}>{item}</Text>
+            <Image style={{height:400,width:'100%'}} source={{uri:`https://picsum.photos/id/${item}/500/400`}}/>
+            // <Text  style={{
+            //     height:300,
+            //     backgroundColor:colors.primary,
+            //     fontSize:50,
+            //     color:'white',
+            // }}>{item}</Text>
+        )}
+        ListFooterComponent={()=>(
+            <View style={{height:150,justifyContent:'center'}}>
+                <ActivityIndicator/>
+            </View>
         )}
       />
     </CustomView>
