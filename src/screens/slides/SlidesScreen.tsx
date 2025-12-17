@@ -37,6 +37,8 @@ export const SlidesScreen = () => {
         renderItem={({item}) => <SlideItem item={item}/>}
         keyExtractor={item => item.title}
         horizontal
+        scrollEnabled={false}
+        pagingEnabled
       />
     </View>
   );
