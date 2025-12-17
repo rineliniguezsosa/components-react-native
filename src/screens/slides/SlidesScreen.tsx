@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text, ImageSourcePropType } from 'react-native';
+import { View,Text, ImageSourcePropType, FlatList } from 'react-native';
 import { colors } from '../../styles/colors';
 
 interface Slide {
@@ -12,17 +12,17 @@ const items: Slide[] = [
   {
     title: 'Titulo 1',
     desc: 'Ea et eu enim fugiat sunt reprehenderit sunt aute quis tempor ipsum cupidatat et.',
-    img: require('../../assets/slide-1.png'),
+    img: require('../../presentation/assets/slide-1.png'),
   },
   {
     title: 'Titulo 2',
     desc: 'Anim est quis elit proident magna quis cupidatat curlpa labore Lorem ea. Exercitation mollit velit in aliquip tempor occaecat dolor minim amet dolor enim cillum excepteur. ',
-    img: require('../../assets/slide-2.png'),
+    img: require('../../presentation/assets/slide-2.png'),
   },
   {
     title: 'Titulo 3',
     desc: 'Ex amet duis amet nulla. Aliquip ea Lorem ea culpa consequat proident. Nulla tempor esse ad tempor sit amet Lorem. Velit ea labore aute pariatur commodo duis veniam enim.',
-    img: require('../../assets/slide-3.png'),
+    img: require('../../presentation/assets/slide-3.png'),
   },
 ];
 
@@ -30,9 +30,14 @@ export const SlidesScreen = () => {
   return (
     <View style={{
         flex:1,
-        backgroundColor: colors.background
+        backgroundColor: colors.background,
     }}>
-      <Text>SlidesScreen</Text>
+      <FlatList
+        data={items}
+        renderItem={({item}) => <Text>{item.title}</Text>}
+        keyExtractor={item => item.title}
+        horizontal
+      />
     </View>
   );
 };
