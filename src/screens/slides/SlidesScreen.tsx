@@ -78,6 +78,11 @@ const SlideItem = ({item}:SlideItemProps) => {
       >
         {title}
       </Text>
+
+      <Text style={{color:colors.text,marginTop:20}}>
+        {desc}
+      </Text>
+
     </View>
   )
 }
