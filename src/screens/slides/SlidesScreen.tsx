@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text, ImageSourcePropType, FlatList } from 'react-native';
+import { View, ImageSourcePropType, FlatList, useWindowDimensions,Image } from 'react-native';
 import { colors } from '../../styles/colors';
 
 interface Slide {
@@ -34,10 +34,41 @@ export const SlidesScreen = () => {
     }}>
       <FlatList
         data={items}
-        renderItem={({item}) => <Text>{item.title}</Text>}
+        renderItem={({item}) => <SlideItem item={item}/>}
         keyExtractor={item => item.title}
         horizontal
       />
     </View>
   );
 };
+
+interface SlideItemProps {
+  item:Slide
+}
+
+const SlideItem = ({item}:SlideItemProps) => {
+  const { width } = useWindowDimensions();
+  const {img} = item;
+  return (
+    <View 
+      style={{
+        flex:1,
+        backgroundColor:'white',
+        borderRadius:5,
+        padding:40,
+        justifyContent:'center',
+        width: width
+      }}
+    >
+      <Image
+        source={img}
+        style={{
+          width:width* 0.7,
+          height:width * 0.7,
+          resizeMode:'center',
+          alignSelf:'center'
+        }}
+      />
+    </View>
+  )
+}
