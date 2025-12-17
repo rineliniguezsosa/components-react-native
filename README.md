@@ -59,3 +59,27 @@ In order to run this project, you must have the following elements installed:
    ```sh
    npx react-native run-android
    ```
+
+   ## Table of contents
+
+- [My process](#my-process)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+
+## My process
+### What I learned
+
+
+### Continued development
+
+- full stack technologies
+
+### Useful resources
+
+- 
+
+## Author
+
+- rinel iniguez sosa
