@@ -1,5 +1,6 @@
 import React from 'react';
 import { View,Text, ImageSourcePropType } from 'react-native';
+import { colors } from '../../styles/colors';
 
 interface Slide {
   title: string;
@@ -27,7 +28,10 @@ const items: Slide[] = [
 
 export const SlidesScreen = () => {
   return (
-    <View>
+    <View style={{
+        flex:1,
+        backgroundColor: colors.background
+    }}>
       <Text>SlidesScreen</Text>
     </View>
   );
