@@ -6,3 +6,7 @@ export * from '../screens/modal/ModalScreen';
 export * from '../screens/refresh/PullToRefreshScreen';
 export * from '../screens/sectionlist/CustomSectionListScreen';
 export * from '../screens/switches/SwitchScreen';
+export * from '../screens/home/Homescreen';
+export * from '../screens/animations/Animation101Screen';
+export * from '../screens/animations/Animation102BounceScreen';
+export * from '../screens/animations/Animation102Screen';
