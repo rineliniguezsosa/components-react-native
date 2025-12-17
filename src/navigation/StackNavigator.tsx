@@ -1,17 +1,19 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { HomeScreen } from '../screens/home/Homescreen';
-import { Animation101Screen } from '../screens/animations/Animation101Screen';
-import { Animation102BounceScreen } from '../screens/animations/Animation102BounceScreen';
-import { Animation102Screen } from '../screens/animations/Animation102Screen';
-import { SwitchScreen } from '../screens/switches/SwitchScreen';
-import { AlertScreen } from '../screens/alerts/AlertScreen';
-import { TextInputScreen } from '../screens/inputs/TextInput';
-import { PullToRefreshScreen } from '../screens/refresh/PullToRefreshScreen';
-import { CustomSectionListScreen } from '../screens/sectionlist/CustomSectionListScreen';
-import { ModalScreen } from '../screens/modal/ModalScreen';
-import { InfiniteScrollScreen } from '../screens/infinitescrool/InfiniteScrollScreen';
-import { SlidesScreen } from '../screens';
+import {
+  SlidesScreen,
+  AlertScreen,
+  InfiniteScrollScreen,
+  TextInputScreen,
+  ModalScreen,
+  PullToRefreshScreen,
+  CustomSectionListScreen,
+  SwitchScreen,
+  HomeScreen,
+  Animation101Screen,
+  Animation102BounceScreen,
+  Animation102Screen
+} from '../screens';
 
 const Stack = createStackNavigator();
 
