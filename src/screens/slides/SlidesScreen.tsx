@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, ImageSourcePropType, FlatList, useWindowDimensions,Image } from 'react-native';
+import { View, Text, ImageSourcePropType, FlatList, useWindowDimensions,Image } from 'react-native';
 import { colors } from '../../styles/colors';
-
+import { globalStyles } from '../../styles/theme';
 interface Slide {
   title: string;
   desc: string;
@@ -48,7 +48,7 @@ interface SlideItemProps {
 
 const SlideItem = ({item}:SlideItemProps) => {
   const { width } = useWindowDimensions();
-  const {img} = item;
+  const {img,desc,title} = item;
   return (
     <View 
       style={{
@@ -69,6 +69,15 @@ const SlideItem = ({item}:SlideItemProps) => {
           alignSelf:'center'
         }}
       />
+
+      <Text
+        style={[
+          globalStyles.title,
+          {color:colors.primary},
+        ]}
+      >
+        {title}
+      </Text>
     </View>
   )
 }
