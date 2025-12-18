@@ -1,10 +1,24 @@
 import React from 'react';
-import { View,Text } from 'react-native';
+import { CustomView,Title,Button } from '../../components';
+import { View } from 'react-native';
+
 
 export const ChangeThemeScreen = () => {
   return (
-    <View>
-      <Text>ChangeThemeScreen</Text>
-    </View>
+    <CustomView margin>
+      <Title text="Cambiar el tema" safe/>
+
+      <Button
+        text="Dark"
+        onPress={() => {}}
+      />
+
+      <View style={{marginTop:10}}/>
+
+      <Button
+        text="Light"
+        onPress={() => {}}
+      />
+    </CustomView>
   );
 };
