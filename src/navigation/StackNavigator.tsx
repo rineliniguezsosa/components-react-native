@@ -12,7 +12,8 @@ import {
   HomeScreen,
   Animation101Screen,
   Animation102BounceScreen,
-  Animation102Screen
+  Animation102Screen,
+  ChangeThemeScreen
 } from '../screens';
 
 const Stack = createStackNavigator();
@@ -37,6 +38,7 @@ export const StackNavigator = () => {
       <Stack.Screen name="ModalScreen" component={ModalScreen}/>
       <Stack.Screen name="InfiniteScrollScreen" component={InfiniteScrollScreen}/>
       <Stack.Screen name="SlidesScreen" component={SlidesScreen}/>
+      <Stack.Screen name="ChangeThemeScreen" component={ChangeThemeScreen}/>
     </Stack.Navigator>
   );
 };
