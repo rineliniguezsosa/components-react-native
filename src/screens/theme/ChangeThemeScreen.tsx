@@ -5,10 +5,10 @@ import { ThemeContext } from '../../context/ThemeContext';
 
 
 export const ChangeThemeScreen = () => {
-  const { setTheme } = useContext(ThemeContext)
+  const { setTheme, currentTheme } = useContext(ThemeContext)
   return (
     <CustomView margin>
-      <Title text="Cambiar el tema" safe/>
+      <Title text={`Cambiar el tema: ${currentTheme}`} safe/>
 
       <Button
         text="Dark"
