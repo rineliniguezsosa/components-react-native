@@ -1,5 +1,5 @@
 import { createContext, PropsWithChildren, useState } from 'react';
-import { lightcolors, ThemeColors } from '../styles/colors';
+import { darkcolors, lightcolors, ThemeColors } from '../styles/colors';
 
 type ThemeColor = 'dark' | 'light';
 
@@ -19,7 +19,12 @@ export const ThemeProvider = ({children}:PropsWithChildren) => {
     };
 
     return (
-        <ThemeContext.Provider value={{currentTheme:currentThemeState, colors: lightcolors,setTheme:setTheme}}>
+        <ThemeContext.Provider
+            value={{
+                currentTheme:currentThemeState,
+                colors: (currentThemeState === 'light' ? lightcolors : darkcolors),
+                setTheme:setTheme,
+            }}>
             {children}
         </ThemeContext.Provider>
     );
