@@ -1,21 +1,21 @@
 import { StyleSheet } from 'react-native';
-import { colors } from './colors';
+// import { colors } from './colors';
 
 export const globalStyles = StyleSheet.create({
     title: {
       fontSize: 30,
       fontWeight: 'bold',
-      color: colors.text,
+      // color: colors.text,
     },
     subTitle: {
       fontSize: 20,
       fontWeight: 'bold',
-      color: colors.text,
+      // color: colors.text,
     },
 
     mainContainer: {
       flex: 1,
-      backgroundColor: colors.background,
+      // backgroundColor: colors.background,
     },
     globalMargin: {
       paddingHorizontal: 20,
@@ -23,13 +23,13 @@ export const globalStyles = StyleSheet.create({
     },
 
     btnPrimary: {
-      backgroundColor: colors.primary,
+      // backgroundColor: colors.primary,
       borderRadius: 10,
       padding: 10,
       alignItems: 'center',
     },
     btnPrimaryText: {
-      color: colors.text,
+      // color: colors.text,
       fontSize: 16,
     },
     input:{
@@ -38,7 +38,7 @@ export const globalStyles = StyleSheet.create({
       borderWidth:1,
       padding:10,
       borderRadius:10,
-      color:colors.text,
+      // color:colors.text,
       borderColor:'rgba(0,0,0,0.3)',
     },
   });
