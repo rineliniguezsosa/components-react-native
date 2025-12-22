@@ -1,9 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Text } from 'react-native';
 import { globalStyles } from '../../styles/theme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { colors } from '../../styles/colors';
+// import { colors } from '../../styles/colors';
+import { ThemeContext } from '../../context/ThemeContext';
 
 interface Props {
     text:string,
@@ -13,6 +14,7 @@ interface Props {
 
 export const Title = ({text,safe = false,white = false}:Props) => {
     const { top } = useSafeAreaInsets();
+    const { colors } = useContext(ThemeContext); 
   return (
       <Text
         style={{
