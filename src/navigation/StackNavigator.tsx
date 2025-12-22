@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import {
   SlidesScreen,
@@ -15,14 +15,19 @@ import {
   Animation102Screen,
   ChangeThemeScreen
 } from '../screens';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Stack = createStackNavigator();
 
 export const StackNavigator = () => {
+  const { colors } = useContext(ThemeContext);
   return (
     <Stack.Navigator
         screenOptions={{
             headerShown:false,
+            cardStyle:{
+              backgroundColor: colors.background,
+            },
         }}
         initialRouteName="HomeScreen"
     >
