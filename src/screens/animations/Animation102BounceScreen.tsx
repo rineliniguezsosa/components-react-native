@@ -1,11 +1,14 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useRef } from 'react';
-import { View,Text,StyleSheet,Pressable, Animated, Easing } from 'react-native';
+import React, { useContext, useRef } from 'react';
+import { Text,StyleSheet,Pressable, Animated, Easing } from 'react-native';
 import { colors } from '../../styles/colors';
+import { ThemeContext } from '../../context/ThemeContext';
+import { CustomView } from '../../components';
 
 export const Animation102BounceScreen = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const boxAnim = useRef(new Animated.Value(-100)).current;
+  const { colors } = useContext(ThemeContext);
 
   const fadeIn = () =>{
     Animated.timing(boxAnim,{
@@ -33,16 +36,16 @@ export const Animation102BounceScreen = () => {
   };
 
   return (
-    <View style={styles.constainer}>
-      <Text>Animation101Screen</Text>
+    <CustomView style={styles.constainer}>
+      <Text style={{ color: colors.text }}>Animation102Screen</Text>
 
       <Animated.View
         style={[styles.purpleBox,{opacity:fadeAnim,transform:[{translateY:boxAnim}]}]}
       />
 
-      <Pressable style={{marginTop:50}} onPress={fadeIn}><Text>Fedin</Text></Pressable>
-      <Pressable style={{marginTop:50}} onPress={fadeOut}><Text>FedOut</Text></Pressable>
-    </View>
+      <Pressable style={{marginTop:50}} onPress={fadeIn}><Text style={{ color: colors.text }}>Fedin</Text></Pressable>
+      <Pressable style={{marginTop:50}} onPress={fadeOut}><Text style={{ color: colors.text }}>FedOut</Text></Pressable>
+    </CustomView>
   );
 };
 
