@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ScrollView,RefreshControl } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Title } from '../../components/ui/Title';
-import { CustomView } from '../../components/ui/CustomView';
+// import { CustomView } from '../../components/ui/CustomView';
 
 export const PullToRefreshScreen = () => {
   const [refresh, setRefresh] = useState(false);
@@ -16,11 +16,11 @@ export const PullToRefreshScreen = () => {
   };
   return (
     <ScrollView
-      refreshControl={<RefreshControl refreshing={refresh} progressViewOffset={top} onRefresh={onRefresh}/>}
+      refreshControl={<RefreshControl refreshing={refresh} progressViewOffset={top} onRefresh={onRefresh} />}
     >
-      <CustomView>
+      {/* <CustomView> */}
         <Title safe text="PullToRefreshScreen" />
-      </CustomView>
+      {/* </CustomView> */}
 
     </ScrollView>
   );
